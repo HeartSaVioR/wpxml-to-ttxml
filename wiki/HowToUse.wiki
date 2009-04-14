@@ -1,0 +1,17 @@
+#summary 사용 방법
+#labels Phase-Deploy
+
+= Introduction =
+
+사용 방법
+
+= Details =
+
+  # 1.8.6 이상 버전의 ruby 를 설치한다
+  # 소스 파일을 내려받는다. 소스 파일 다운로드는 아래 두 가지 방법 중 하나를 선택한다. 
+    * Downloads 탭에서 릴리즈 버전을 다운로드 받아서 압축을 해제한다 
+    * Source 탭에서 소스 파일을 내려받는다.
+  # 소스 파일이 위치하는 디렉토리에서 아래와 같은 커맨드를 입력한다
+    * ruby migrate_main.rb source_file_path(!WordPress) target_file_path(TTXML)
+      * 첫 번째 전달인자에 워드프레스 백업 파일의 위치를 적는다
+      * 두 번째 전달인자에 생성될 태터계열 백업 파일의 위치를 적는다
