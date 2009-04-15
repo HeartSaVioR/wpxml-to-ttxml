@@ -1,0 +1,25 @@
+#summary RubyScript2Exe 를 사용하여 윈도우 바이너리 파일을 만드는 방법
+#labels Phase-Implementation
+
+= Introduction =
+
+!RubyScript2Exe 를 사용하여 윈도우 바이너리 파일을 만드는 방법을 소개합니다
+
+= Details =
+
+  # 먼저 ruby 1.8 이상을 설치합니다. 이는 소스 코드를 개발한 버전과 동일합니다
+  # !Tar2RubyScript 와 !RubyScript2Exe 를 설치합니다(설치되어 있다면 생략합니다)
+    * gem install tar2rubyscript
+    * gem install rubyscript2exe
+  # 소스 코드를 SVN 을 통해 내려받습니다(Source 탭을 보시면 소스 코드를 얻을 수 있는 경로가 기재되어 있습니다)
+  # 내려받은 소스 코드 에 있는 배치 파일을 차례로 실행합니다
+    * make_archived_source.bat
+    * make_exe_distribute.bat
+  # 정상적으로 동작했다면, dist 디렉토리가 만들어지고, WPXML2TTXML.exe 파일이 생성되어 있을 것입니다.
+    * 이 파일은 ruby 인터프리터를 필요로 하지 않는 윈도우용 바이너리입니다
+
+!Tar2RubyScript 와 !RubyScript2Exe 에 대한 자세한 설명은 아래 사이트를 참조하세요
+
+[http://erikveenstra.nl/tar2rubyscript/index.html Tar2RubyScript]
+
+[http://www.erikveen.dds.nl/rubyscript2exe/ RubyScript2Exe]
