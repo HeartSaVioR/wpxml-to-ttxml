@@ -15,3 +15,11 @@
     * ruby migrate_main.rb source_file_path(!WordPress) target_file_path(TTXML)
       * 첫 번째 전달인자에 워드프레스 백업 파일의 위치를 적는다
       * 두 번째 전달인자에 생성될 태터계열 백업 파일의 위치를 적는다
+
+*윈도우 사용자 분들은 아래와 같은 방법으로 ruby 설치 및 번거로운 절차 없이 사용하실 수 있습니다*
+
+  # Downloads 탭에서 윈도우 용 릴리즈 실행 파일(Standalone Executable) 을 다운로드 받는다
+  # 내려받은 실행 파일(EXE)이 위치하는 디렉토리에서 아래와 같은 커맨드를 입력한다
+    * WPXML2TTXML.exe source_file_path(!WordPress) target_file_path(TTXML)
+      * 첫 번째 전달인자에 워드프레스 백업 파일의 위치를 적는다
+      * 두 번째 전달인자에 생성될 태터계열 백업 파일의 위치를 적는다
