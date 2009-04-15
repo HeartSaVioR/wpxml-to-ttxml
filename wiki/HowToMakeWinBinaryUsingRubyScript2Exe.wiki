@@ -8,8 +8,7 @@
 = Details =
 
   # 먼저 ruby 1.8 이상을 설치합니다. 이는 소스 코드를 개발한 버전과 동일합니다
-  # !Tar2RubyScript 와 !RubyScript2Exe 를 설치합니다(설치되어 있다면 생략합니다)
-    * gem install tar2rubyscript
+  # !RubyScript2Exe 를 설치합니다(설치되어 있다면 생략합니다)
     * gem install rubyscript2exe
   # 소스 코드를 SVN 을 통해 내려받습니다(Source 탭을 보시면 소스 코드를 얻을 수 있는 경로가 기재되어 있습니다)
   # 내려받은 소스 코드 에 있는 배치 파일을 차례로 실행합니다
