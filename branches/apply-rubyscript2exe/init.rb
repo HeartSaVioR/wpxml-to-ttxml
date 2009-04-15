@@ -11,6 +11,9 @@ require 'wp_backup_parser'
 require 'wp_to_tt_migrator'
 require 'ttxml_writer'
 
+# TAR2RUBYSCRIPT 사용 시 디렉토리 경로를 임시 경로가 아닌 실행 경로로 변경
+Dir.chdir oldlocation if defined?(TAR2RUBYSCRIPT)
+
 # 전달인자 체크
 unless ARGV.length == 2
   puts "Argument USAGE : <source file path(WordPress)> <target_file_path(TTXML)>"
