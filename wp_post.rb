@@ -7,6 +7,8 @@
 # writer : 작성자명 // String
 # tags : 태그 리스트 // Array of String
 # categories : 카테고리 리스트 // Array of String
+# status : 포스트 타입 // String(publish/draft)
+# password : 패스워드 // String
 # content : 내용 // String
 # post_id : 포스트의 ID // String
 # post_date : 등록 시각 // String
@@ -16,8 +18,8 @@
 #
 # 시각의 타입 : String(YYYY-MM-DD 24HR:MI:SS)
 class WPPost
-  attr_accessor :title, :link, :pub_date, :writer, :tags, :categories, :content, :post_id,
-    :post_date, :comment_status, :ping_status, :comments
+  attr_accessor :title, :link, :pub_date, :writer, :tags, :categories, :status, 
+  :password, :content, :post_id, :post_date, :comment_status, :ping_status, :comments
   
   def initialize
     @comments = []
@@ -28,6 +30,8 @@ class WPPost
     @link = nil
     @pub_date = nil
     @writer = nil
+    @status = nil
+    @password = nil
     @content = nil
     @post_id = nil
     @post_date = nil
