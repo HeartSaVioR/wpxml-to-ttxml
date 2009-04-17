@@ -82,11 +82,10 @@ class WPBackupParser
     XPath.each(@document, "//item") do |post|
       wp_post = WPPost.new
 
-      status = nil
-      status = post.elements["wp:status"].text
-
-      # 주의 : 배포 상태인 글만 받아들임
-      next if status != "publish"
+      wp_post.status = post.elements["wp:status"].text
+      
+      password_text = post.elements["wp:post_password"].text
+      wp_post.password = password_text if nil != password_text && "" != password_text
 
       wp_post.title = post.elements["title"].text
       wp_post.link = post.elements["link"].text
