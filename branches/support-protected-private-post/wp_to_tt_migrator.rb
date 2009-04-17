@@ -101,11 +101,30 @@ private
 
       tt_post = TTPost.new
       tt_post.id = wp_post.post_id
-      tt_post.visibility = "public"   # 현재 발행만 지원함, WP도 공개만 가져옴
+      
+      # 공개 / 보호글 / 비공개글 구분
+      if "draft" == wp_post.status
+      	# 주의 : 임시 상태인 글은 받아들이지 않음
+      	puts "\"#{wp_post.title}\" : (Warning)Draft post is not supported"
+      	
+      	next
+  	  elsif "private" == wp_post.status
+  	  	tt_post.visibility = "private"
+  	  	tt_post.password = nil
+  	  else # if "publish" == wp_post.status
+	  	if nil != wp_post.password
+  	  	  tt_post.visibility = "protected"
+  	  	  tt_post.password = wp_post.password
+  	  	else
+	  	  tt_post.visibility = "public"
+  		  tt_post.password = nil
+  	  	end
+  	  end
+            
       tt_post.title = wp_post.title
       tt_post.content = wp_post.content
       tt_post.location = "/"
-      tt_post.password = nil          # 패스워드 보호글을 지원하지 않음
+      
       tt_post.accept_comment = wp_post.comment_status
       tt_post.accept_trackback = wp_post.ping_status
 
