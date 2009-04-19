@@ -82,6 +82,10 @@ class WPBackupParser
     XPath.each(@document, "//item") do |post|
       wp_post = WPPost.new
 
+	  # 첨부 파일 가려냄
+	  # 일단은 첨부파일은 적용대상에서 제외시키는것으로 처리
+	  next if "attachment" == post.elements["wp:post_type"].text
+	  
       wp_post.status = post.elements["wp:status"].text
       
       password_text = post.elements["wp:post_password"].text
