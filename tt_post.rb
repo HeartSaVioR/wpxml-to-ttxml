@@ -17,17 +17,19 @@
 # @tags : 포스트에 속한 태그들 // Array of String
 # @comments : 포스트에 속한 댓글들 // Array of TTComment
 # @trackbacks : 포스트에 속한 트랙백들 // Array of TTTrackback
+# @attachments : 포스트에 속한 첨부파일들 // Array of TTAttachment
 #
 # * 시각은 00:00:00 UTC on January 1, 1970 기준으로 지난 시간 - sec
 class TTPost
   attr_accessor :id, :visibility, :title, :content, :location, :password,
     :accept_comment, :accept_trackback, :publish_date, :create_date,
-    :modify_date, :category, :tags, :comments, :trackbacks
+    :modify_date, :category, :tags, :comments, :trackbacks, :attachments
 
   def initialize
     @comments = []
     @trackbacks = []
     @tags = []
+    @attachments = []
 
   end
 
@@ -50,5 +52,11 @@ class TTPost
   def add_tag(tag)
     @tags.push(tag)
   end
-
+  
+  # 첨부파일 추가
+  # attachment : 첨부파일 // TTAttachment
+  def add_attachment(attachment)
+  	@attachments.push(attachment)
+  end
+  	
 end

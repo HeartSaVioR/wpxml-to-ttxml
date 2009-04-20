@@ -113,7 +113,34 @@ class TTXMLWriter
         
         post_tag.add_element comment_tag
       end
-            
+      
+      post.attachments.each do |attach|
+      	attach_tag = Element.new "attachment"
+      	attach_tag.add_attribute "size"
+      	attach_tag.add_attribute "width"
+      	attach_tag.add_attribute "height"
+      	
+      	attach_tag.attributes["size"] = attach.attach_size.to_s
+      	
+      	(nil == attach.width || attach.width <= 0) ? 
+      		attach_tag.attributes["width"] = "0" : 
+      		attach_tag.attributes["width"] = attach.width.to_s
+    		  
+      	(nil == attach.height || attach.height <= 0) ? 
+      		attach_tag.attributes["height"] = "0" : 
+      		attach_tag.attributes["height"] = attach.height.to_s
+      	
+      	attach_tag.add_element make_xml_element("name", attach.name)
+      	attach_tag.add_element make_xml_element("label", attach.name)
+      	attach_tag.add_element make_xml_element("enclosure", 0)
+      	attach_tag.add_element make_xml_element("attached", attach.attached)
+      	attach_tag.add_element make_xml_element("downloads", 0)
+      	attach_tag.add_element make_xml_element("content", attach.content)
+      	
+      	post_tag.add_element attach_tag
+      	
+    	end
+
       blog_tag.add_element post_tag
     end
 

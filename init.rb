@@ -32,7 +32,10 @@ wp_backup_parser = WPBackupParser.new(doc)
 wp_backup_parser.parse
 
 # 파싱된 WPXML 정보를 토대로 TTXML 정보로 변환
-wp_to_tt_migrator = WPtoTTMigrator.new(wp_backup_parser.categories, wp_backup_parser.posts)
+wp_to_tt_migrator = WPtoTTMigrator.new(
+	wp_backup_parser.categories, wp_backup_parser.posts, wp_backup_parser.attachments
+)
+
 wp_to_tt_migrator.migrate
 
 # 변환된 TTXML 정보를 파일로 기입
